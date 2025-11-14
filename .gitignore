@@ -1,0 +1,64 @@
+# -----------------------------------------------------
+# Node / pnpm
+# -----------------------------------------------------
+node_modules/
+.pnpm-store/
+.pnp.*
+.pnp.js
+
+# Turbo build cache
+turbo/
+.turbo/
+.turbo/*
+cache/
+.cache/
+
+# Next.js build outputs
+.next/
+out/
+dist/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Mac / Windows junk
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# TypeScript
+*.tsbuildinfo
+
+# Prisma
+**/prisma/*.db
+**/prisma/*.db-journal
+
+# Expo / React Native
+.expo/
+.expo-shared/
+android/
+ios/
+build/
+
+# OS Temp
+tmp/
+temp/
+
+# Optional
+coverage/

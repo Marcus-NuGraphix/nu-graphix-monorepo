@@ -1,0 +1,11 @@
+{
+    "name": "@nugraphix/ui",
+    "version": "0.1.0",
+    "main": "src/index.tsx",
+    "types": "src/index.tsx",
+    "private": false,
+    "peerDependencies": {
+        "react": "19.2.0",
+        "react-dom": "19.2.0"
+    }
+}
