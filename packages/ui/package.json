@@ -7,5 +7,13 @@
     "peerDependencies": {
         "react": "19.2.0",
         "react-dom": "19.2.0"
+    },
+    "devDependencies": {
+        "@nugraphix/config": "workspace:*",
+        "@types/react": "^19.2.5"
+    },
+    "dependencies": {
+        "clsx": "^2.1.1",
+        "tailwind-merge": "^3.4.0"
     }
 }

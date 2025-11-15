@@ -1,0 +1,10 @@
+{
+  "name": "@nugraphix/config",
+  "version": "0.1.0",
+  "private": false,
+  "main": "index.js",
+  "devDependencies": {
+    "eslint": "^9.39.1",
+    "eslint-config-next": "16.0.3"
+  }
+}

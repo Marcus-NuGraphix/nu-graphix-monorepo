@@ -1,0 +1,11 @@
+{
+  "extends": "@nugraphix/config/typescript/react-library.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "moduleResolution": "bundler"
+  },
+  "include": ["src"]
+}
