@@ -10,3 +10,5 @@ export * from "./avatar";
 export * from "./spinner";
 export * from "./layout";
 export * from "./select";
+export * from "./link";
+export * from "./menu";

@@ -1,0 +1,253 @@
+/* Navigation component-specific styling */
+
+/* =========================================
+   NAVIGATION COMPONENTS
+   ========================================= */
+
+.ui-navigation {
+  /* Smooth backdrop blur for sticky navigation */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.ui-navigation.sticky {
+  /* Enhanced backdrop support */
+  background: rgba(var(--color-surface), 0.9);
+}
+
+.ui-navbar {
+  /* Consistent navigation styling */
+  transition: 
+    background-color var(--transition-normal) var(--easing-standard),
+    border-color var(--transition-normal) var(--easing-standard);
+}
+
+/* =========================================
+   MENU SYSTEM
+   ========================================= */
+
+.ui-menu-content {
+  /* Enhanced shadow for menu dropdowns */
+  box-shadow: 
+    0 10px 25px rgba(15, 23, 42, 0.15),
+    0 0 0 1px rgba(15, 23, 42, 0.05);
+  
+  /* Backdrop blur for glass effect */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.ui-menu-item {
+  /* Smooth interaction transitions */
+  transition: 
+    background-color var(--transition-fast) var(--easing-standard),
+    color var(--transition-fast) var(--easing-standard);
+}
+
+.ui-menu-item:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: -2px;
+}
+
+/* =========================================
+   BREADCRUMB
+   ========================================= */
+
+.ui-breadcrumb ol {
+  /* Ensure proper spacing and alignment */
+  flex-wrap: wrap;
+}
+
+.ui-breadcrumb a {
+  /* Enhanced link styling */
+  border-radius: var(--radius-sm);
+  padding: 0.125rem 0.25rem;
+  margin: -0.125rem -0.25rem;
+}
+
+.ui-breadcrumb a:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* =========================================
+   TABS
+   ========================================= */
+
+.ui-tabs {
+  /* Tab container styling */
+  position: relative;
+}
+
+.ui-tab {
+  /* Enhanced tab transitions */
+  transition: 
+    color var(--transition-fast) var(--easing-standard),
+    background-color var(--transition-fast) var(--easing-standard),
+    border-color var(--transition-fast) var(--easing-standard),
+    transform var(--transition-fast) var(--easing-standard);
+}
+
+/* Underline variant specific styling */
+.ui-tab.variant-underline.active::after {
+  animation: tab-underline var(--transition-normal) var(--easing-standard);
+}
+
+@keyframes tab-underline {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Pills variant hover effects */
+.ui-tab.variant-pills:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+/* Tab content animations */
+.ui-tab-content {
+  animation: tab-content-in var(--transition-normal) var(--easing-standard);
+}
+
+@keyframes tab-content-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   LINK COMPONENT
+   ========================================= */
+
+.ui-link {
+  /* Enhanced link styling with better focus states */
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.ui-link:focus-visible {
+  /* Better focus visibility */
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.ui-link[href]:hover {
+  /* Subtle lift effect */
+  transform: translateY(-0.5px);
+}
+
+/* External link icon animation */
+.ui-link svg {
+  transition: transform var(--transition-fast) var(--easing-standard);
+}
+
+.ui-link:hover svg {
+  transform: translateX(1px) translateY(-1px);
+}
+
+/* =========================================
+   RESPONSIVE BEHAVIOR
+   ========================================= */
+
+/* Mobile navigation enhancements */
+@media (max-width: 1024px) {
+  .ui-navigation .mobile-menu {
+    animation: mobile-menu-in var(--transition-normal) var(--easing-standard);
+  }
+  
+  @keyframes mobile-menu-in {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Tablet optimizations */
+@media (max-width: 768px) {
+  .ui-tabs .ui-tab {
+    /* Larger touch targets on mobile */
+    min-height: 44px;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ========================================= */
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .ui-navigation,
+  .ui-navbar,
+  .ui-menu-item,
+  .ui-tab,
+  .ui-link,
+  .ui-tab-content {
+    animation: none;
+    transition: none;
+  }
+  
+  .ui-link:hover {
+    transform: none;
+  }
+  
+  .ui-tab.variant-pills:hover:not(:disabled) {
+    transform: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .ui-navigation,
+  .ui-navbar {
+    border-width: 2px;
+  }
+  
+  .ui-menu-content {
+    border-width: 2px;
+    box-shadow: none;
+  }
+  
+  .ui-tab.active {
+    border-width: 2px;
+    font-weight: bold;
+  }
+}
+
+/* Focus-visible enhancements */
+.ui-navigation:focus-within,
+.ui-navbar:focus-within {
+  /* Subtle container focus indication */
+  outline: 1px solid transparent;
+}
+
+/* =========================================
+   DARK THEME ADJUSTMENTS
+   ========================================= */
+
+@media (prefers-color-scheme: dark) {
+  .ui-navigation.sticky {
+    background: rgba(2, 6, 23, 0.9);
+  }
+  
+  .ui-menu-content {
+    box-shadow: 
+      0 10px 25px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+}

@@ -1,5 +1,6 @@
 import * as React from "react";
 import { cn } from "../../utils/cn";
+import { Stack, Flex } from "../../atoms/layout";
 import { Input, type InputProps } from "../../atoms/input";
 
 export interface TextFieldProps
@@ -34,18 +35,20 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
     const errorId = error ? `${fieldId}-error` : undefined;
 
     return (
-      <div className={cn("flex flex-col gap-1.5", className)}>
+      <Stack gap={1.5} className={className}>
         {label && (
           <label
             htmlFor={fieldId}
-            className="text-sm font-medium text-[var(--color-foreground)] flex items-center gap-1"
+            className="text-sm font-medium text-foreground"
           >
-            {label}
-            {required && (
-              <span className="text-[var(--color-danger)]" aria-hidden="true">
-                *
-              </span>
-            )}
+            <Flex align="center" gap={1}>
+              {label}
+              {required && (
+                <span className="text-(--color-danger)" aria-hidden="true">
+                  *
+                </span>
+              )}
+            </Flex>
           </label>
         )}
 
@@ -62,19 +65,19 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
         {error ? (
           <p
             id={errorId}
-            className="text-xs text-[var(--color-danger)]"
+            className="text-xs text-(--color-danger)"
           >
             {error}
           </p>
         ) : description ? (
           <p
             id={descriptionId}
-            className="text-xs text-[var(--color-foreground-muted)]"
+            className="text-xs text-(--color-foreground-muted)"
           >
             {description}
           </p>
         ) : null}
-      </div>
+      </Stack>
     );
   }
 );

@@ -1,5 +1,6 @@
 @import "../web/src/atoms/avatar/avatar.css";
 @import "../web/src/atoms/layout/layout.css";
+@import "../web/src/molecules/navigation/navigation.css";
 
 /* =========================================
    Global, generic design tokens (light theme)
