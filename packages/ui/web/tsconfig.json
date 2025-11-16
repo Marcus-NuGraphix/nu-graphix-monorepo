@@ -7,5 +7,5 @@
     "outDir": "dist",
     "moduleResolution": "bundler"
   },
-  "include": ["src"]
+  "include": ["src", "../../../apps/web-nugraphix/components/ui-stories/atoms/Avatar.examples.tsx"]
 }

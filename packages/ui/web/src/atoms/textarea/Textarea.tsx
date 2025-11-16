@@ -14,18 +14,18 @@ export interface TextareaProps
 
 const baseClasses =
   [
-    "rounded-md border bg-white text-slate-900 shadow-sm",
+    "rounded-md border bg-[var(--color-surface)] text-[var(--color-foreground)] shadow-sm",
     "transition-all outline-none",
-    "placeholder:text-slate-400",
+    "placeholder:text-[var(--color-foreground-muted)]",
     "disabled:cursor-not-allowed disabled:opacity-60",
     "resize-y", // allow vertical resize only
   ].join(" ");
 
 const variantClasses: Record<TextareaVariant, string> = {
   default:
-    "border-slate-300 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-0 focus-visible:border-blue-500",
+    "border-[var(--color-border-subtle)] focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] focus-visible:ring-offset-0 focus-visible:border-[var(--color-primary)]",
   ghost:
-    "border-transparent bg-transparent shadow-none focus-visible:ring-1 focus-visible:ring-slate-400",
+    "border-transparent bg-transparent shadow-none focus-visible:ring-1 focus-visible:ring-[var(--color-border-subtle)]",
   unstyled:
     "border-none bg-transparent shadow-none focus-visible:ring-0 focus-visible:outline-none px-0 py-0",
 };
@@ -57,7 +57,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           sizeClasses[size],
           fullWidth && "w-full",
           isInvalid &&
-            "border-red-500 focus-visible:ring-red-500 focus-visible:border-red-500",
+            "border-[var(--color-danger)] focus-visible:ring-[var(--color-danger)] focus-visible:border-[var(--color-danger)]",
           className
         )}
         aria-invalid={isInvalid || undefined}

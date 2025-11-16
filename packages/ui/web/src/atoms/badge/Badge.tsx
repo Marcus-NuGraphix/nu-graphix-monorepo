@@ -22,17 +22,17 @@ const baseClasses =
 
 const variantClasses: Record<BadgeVariant, string> = {
   neutral:
-    "border-slate-200 bg-slate-100 text-slate-800",
+    "border-[var(--color-border-subtle)] bg-[var(--color-surface-subtle)] text-[var(--color-foreground)]",
   primary:
-    "border-blue-200 bg-blue-50 text-blue-700",
+    "border-[var(--color-primary-soft)] bg-[var(--color-primary-soft)] text-[var(--color-primary)]",
   success:
-    "border-emerald-200 bg-emerald-50 text-emerald-700",
+    "border-[var(--color-border-success)] bg-[var(--color-success-soft)] text-[var(--color-success)]",
   warning:
-    "border-amber-200 bg-amber-50 text-amber-800",
+    "border-[var(--color-border-warning)] bg-[var(--color-warning-soft)] text-[var(--color-warning)]",
   danger:
-    "border-red-200 bg-red-50 text-red-700",
+    "border-[var(--color-border-danger)] bg-[var(--color-danger-soft)] text-[var(--color-danger)]",
   outline:
-    "border-slate-300 bg-transparent text-slate-800",
+    "border-[var(--color-border-subtle)] bg-transparent text-[var(--color-foreground)]",
 };
 
 const sizeClasses: Record<BadgeSize, string> = {

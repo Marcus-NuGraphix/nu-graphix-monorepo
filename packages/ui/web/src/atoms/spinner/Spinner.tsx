@@ -20,7 +20,7 @@ export const Spinner = React.forwardRef<HTMLDivElement, SpinnerProps>(
     <div
       ref={ref}
       className={cn(
-        "inline-block rounded-full border-2 border-slate-200 border-t-blue-600 animate-spin",
+        "inline-block rounded-full border-2 border-[var(--color-border-subtle)] border-t-[var(--color-primary)] animate-spin",
         sizeClasses[size],
         className
       )}

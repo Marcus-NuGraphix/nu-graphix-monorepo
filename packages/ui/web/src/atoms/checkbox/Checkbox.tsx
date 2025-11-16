@@ -14,7 +14,7 @@ export interface CheckboxProps extends NativeCheckboxProps {
 }
 
 const boxBase =
-  "inline-flex items-center justify-center rounded border bg-white shadow-sm transition-all";
+  "inline-flex items-center justify-center rounded border bg-[var(--color-surface)] shadow-sm transition-all";
 
 const sizeClasses: Record<CheckboxSize, string> = {
   sm: "h-4 w-4 text-[10px]",
@@ -62,9 +62,9 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           className={cn(
             boxBase,
             sizeClasses[size],
-            "border-slate-300 text-white",
-            "peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-blue-500 peer-focus-visible:ring-offset-2",
-            "peer-checked:bg-blue-600 peer-checked:border-blue-600",
+            "border-[var(--color-border-subtle)] text-[var(--color-primary-foreground)]",
+            "peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-[var(--color-focus-ring)] peer-focus-visible:ring-offset-2",
+            "peer-checked:bg-[var(--color-primary)] peer-checked:border-[var(--color-primary)]",
             "peer-checked:shadow-md"
           )}
         >
@@ -90,7 +90,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
         {label && (
           <span
             className={cn(
-              "text-slate-900",
+              "text-[var(--color-foreground)]",
               labelSizeClasses[size]
             )}
           >

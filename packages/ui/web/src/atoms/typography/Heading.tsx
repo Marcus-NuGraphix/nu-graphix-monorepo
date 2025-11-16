@@ -47,7 +47,7 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
       <Tag
         ref={ref}
         className={cn(
-          "text-slate-900",
+          "text-[var(--color-foreground)]",
           levelClasses[level],
           align && alignClasses[align],
           truncate && "truncate",

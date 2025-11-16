@@ -16,13 +16,13 @@ export interface CardProps
 
 const baseClasses =
   [
-    "rounded-xl border bg-white text-slate-900 shadow-sm",
+    "rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-surface)] text-[var(--color-foreground)] shadow-sm",
     "transition-all",
   ].join(" ");
 
 const variantClasses: Record<CardVariant, string> = {
   elevated: "shadow-md hover:shadow-lg border-transparent",
-  outline: "border-slate-200",
+  outline: "border-[var(--color-border-subtle)]",
   ghost: "border-transparent bg-transparent shadow-none",
 };
 
@@ -34,7 +34,7 @@ const paddingClasses: Record<CardPadding, string> = {
 };
 
 const interactiveClasses =
-  "cursor-pointer hover:-translate-y-[1px] hover:shadow-md active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2";
+  "cursor-pointer hover:-translate-y-[1px] hover:shadow-md active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] focus-visible:ring-offset-2";
 
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(
   (

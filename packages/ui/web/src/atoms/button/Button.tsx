@@ -26,22 +26,23 @@ const baseClasses =
     "inline-flex items-center justify-center rounded-md font-medium",
     "transition-all transform-gpu",
     "disabled:opacity-60 disabled:cursor-not-allowed disabled:pointer-events-none",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-focus-ring)]",
     "active:scale-[0.97]",
   ].join(" ");
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "bg-blue-600 text-white hover:bg-blue-700 shadow-sm hover:shadow-md",
+    "bg-[var(--color-primary)] text-[var(--color-primary-foreground)] hover:brightness-110 shadow-sm hover:shadow-md",
   secondary:
-    "bg-slate-100 text-slate-900 hover:bg-slate-200 border border-slate-200",
+    "bg-[var(--color-secondary-soft)] text-[var(--color-secondary-foreground)] hover:brightness-105",
   outline:
-    "border border-slate-300 text-slate-900 hover:bg-slate-50 bg-transparent",
+    "border border-[var(--color-border-subtle)] text-[var(--color-foreground)] bg-transparent hover:bg-[var(--color-surface-subtle)]",
   ghost:
-    "bg-transparent text-slate-700 hover:bg-slate-100 hover:text-slate-900",
+    "bg-transparent text-[var(--color-foreground-muted)] hover:bg-[var(--color-surface-subtle)] hover:text-[var(--color-foreground)]",
   destructive:
-    "bg-red-600 text-white hover:bg-red-700 shadow-sm hover:shadow-md",
-  link: "bg-transparent text-blue-600 hover:text-blue-700 underline-offset-4 hover:underline px-0",
+    "bg-[var(--color-danger)] text-[var(--color-danger-foreground)] hover:brightness-110 shadow-sm hover:shadow-md",
+  link:
+    "bg-transparent text-[var(--color-primary)] hover:text-[var(--color-primary)]/90 underline-offset-4 hover:underline px-0",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

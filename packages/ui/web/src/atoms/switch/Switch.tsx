@@ -18,7 +18,7 @@ export interface SwitchProps
 const trackBase =
   "relative inline-flex items-center rounded-full border border-transparent transition-all";
 const thumbBase =
-  "pointer-events-none inline-block rounded-full bg-white shadow-sm transition-transform";
+  "pointer-events-none inline-block rounded-full bg-[var(--color-surface)] shadow-sm transition-transform";
 
 const sizeClasses: Record<
   SwitchSize,
@@ -91,8 +91,10 @@ export const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
           className={cn(
             trackBase,
             sizeCfg.track,
-            checked ? "bg-blue-600" : "bg-slate-200",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+            checked
+              ? "bg-[var(--color-primary)]"
+              : "bg-[var(--color-surface-subtle)]",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] focus-visible:ring-offset-2"
           )}
         >
           <span
@@ -105,7 +107,7 @@ export const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
         </span>
 
         {label && (
-          <span className={cn("text-slate-900", sizeCfg.label)}>
+          <span className={cn("text-[var(--color-foreground)]", sizeCfg.label)}>
             {label}
           </span>
         )}

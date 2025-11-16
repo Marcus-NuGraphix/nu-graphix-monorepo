@@ -38,11 +38,11 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
         {label && (
           <label
             htmlFor={fieldId}
-            className="text-sm font-medium text-slate-900 flex items-center gap-1"
+            className="text-sm font-medium text-[var(--color-foreground)] flex items-center gap-1"
           >
             {label}
             {required && (
-              <span className="text-red-500" aria-hidden="true">
+              <span className="text-[var(--color-danger)]" aria-hidden="true">
                 *
               </span>
             )}
@@ -62,14 +62,14 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
         {error ? (
           <p
             id={errorId}
-            className="text-xs text-red-600"
+            className="text-xs text-[var(--color-danger)]"
           >
             {error}
           </p>
         ) : description ? (
           <p
             id={descriptionId}
-            className="text-xs text-slate-500"
+            className="text-xs text-[var(--color-foreground-muted)]"
           >
             {description}
           </p>

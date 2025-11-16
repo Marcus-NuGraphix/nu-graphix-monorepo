@@ -15,8 +15,8 @@ const variantClasses: Record<TextVariant, string> = {
   sm: "text-xs",
   md: "text-sm",
   lg: "text-base",
-  muted: "text-sm text-slate-500",
-  caption: "text-[11px] uppercase tracking-wide text-slate-500",
+  muted: "text-sm text-[var(--color-foreground-muted)]",
+  caption: "text-[11px] uppercase tracking-wide text-[var(--color-foreground-muted)]",
 };
 
 const alignClasses: Partial<Record<TextAlign, string>> = {
@@ -45,7 +45,7 @@ export const Text = React.forwardRef<HTMLElement, TextProps>(
       <Component
         ref={ref as any}
         className={cn(
-          "text-slate-900",
+          "text-[var(--color-foreground)]",
           variantClasses[variant],
           align && alignClasses[align],
           truncate && "truncate",

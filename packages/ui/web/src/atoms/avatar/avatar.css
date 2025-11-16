@@ -1,0 +1,151 @@
+/* Avatar-specific animations / styling */
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+
+/* Loading skeleton pulse animation */
+@keyframes avatar-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+/* Fade-in animation for images */
+@keyframes avatar-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Status indicator pulse for online/active states */
+@keyframes avatar-status-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+}
+
+/* =========================================
+   BASE STYLES
+   ========================================= */
+
+.avatar {
+  /* Ensure consistent rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Prevent text selection on interactive avatars */
+  user-select: none;
+  -webkit-user-select: none;
+  
+  /* Smooth transitions for all state changes */
+  transition: 
+    transform var(--transition-normal) var(--easing-standard),
+    box-shadow var(--transition-normal) var(--easing-standard),
+    opacity var(--transition-fast) var(--easing-standard);
+}
+
+/* Loading placeholder animation */
+.avatar--loading {
+  animation: avatar-pulse var(--transition-slow) var(--easing-standard) infinite;
+  background: linear-gradient(
+    135deg,
+    var(--color-surface-subtle) 0%,
+    var(--color-bg-muted) 50%,
+    var(--color-surface-subtle) 100%
+  );
+  background-size: 200% 200%;
+  animation: avatar-pulse var(--transition-slow) var(--easing-standard) infinite;
+}
+
+/* =========================================
+   INTERACTIVE STATES
+   ========================================= */
+
+.avatar--interactive {
+  /* Enhanced transition for interactive elements */
+  transition: 
+    transform var(--transition-normal) var(--easing-standard),
+    box-shadow var(--transition-normal) var(--easing-standard),
+    filter var(--transition-fast) var(--easing-standard);
+  
+  /* Subtle outline on hover for better affordance */
+  position: relative;
+}
+
+.avatar--interactive:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: var(--shadow-sm);
+}
+
+.avatar--interactive:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Focus state with enhanced visibility */
+.avatar--interactive:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+  box-shadow: var(--shadow-focus);
+}
+
+/* Disabled state */
+.avatar--interactive:disabled,
+.avatar--interactive[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* =========================================
+   STATUS INDICATORS
+   ========================================= */
+
+/* Pulse animation for online status */
+.avatar [aria-label*="online"] {
+  animation: avatar-status-pulse 2s var(--easing-standard) infinite;
+}
+
+/* =========================================
+   RESPONSIVE & ACCESSIBILITY
+   ========================================= */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .avatar,
+  .avatar--loading,
+  .avatar--interactive,
+  .avatar [aria-label*="online"] {
+    animation: none;
+    transition: none;
+  }
+  
+  .avatar--interactive:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .avatar {
+    outline: 1px solid currentColor;
+  }
+  
+  .avatar--interactive:focus-visible {
+    outline-width: 3px;
+  }
+}
