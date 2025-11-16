@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { cn } from "@nugraphix/ui/web/src/utils/cn";
-import { Button } from "@nugraphix/ui/web/src/atoms/button";
+import { Button } from "@nugraphix/ui";
 
 export interface CodeBlockProps {
   code: string;
@@ -59,7 +59,7 @@ export function CodeBlock({
         )}>
           <code className={cn(
             "language-${language}",
-            "text-(--color-foreground)",
+            "text-foreground",
             "font-mono"
           )}>
             {code}

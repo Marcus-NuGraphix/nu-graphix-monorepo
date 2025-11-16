@@ -1,6 +1,6 @@
 import * as React from "react";
 import { cn } from "@nugraphix/ui/web/src/utils/cn";
-import { Badge } from "@nugraphix/ui/web/src/atoms/badge";
+import { Badge } from "@nugraphix/ui";
 
 export interface PropDefinition {
   name: string;

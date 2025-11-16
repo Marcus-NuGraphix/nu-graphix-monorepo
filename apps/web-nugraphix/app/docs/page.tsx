@@ -1,9 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
-import { Stack, Flex } from "@nugraphix/ui/web/src/atoms/layout";
-import { Button } from "@nugraphix/ui/web/src/atoms/button";
-import { Card } from "@nugraphix/ui/web/src/atoms/card";
-import { Badge } from "@nugraphix/ui/web/src/atoms/badge";
+import { Stack, Flex, Button, Card, Badge } from "@nugraphix/ui";
 
 export default function DocsHomePage() {
   return (

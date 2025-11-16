@@ -1,0 +1,38 @@
+/* =========================================
+   FLEX LAYOUT
+   ========================================= */
+
+.ui-flex {
+  display: flex;
+  transition: gap var(--transition-fast) var(--easing-standard);
+}
+
+/* Responsive flex behavior */
+.ui-flex--responsive {
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .ui-flex--responsive {
+    flex-direction: row;
+  }
+}
+
+/* =========================================
+   RESPONSIVE UTILITIES
+   ========================================= */
+
+/* Smooth container transitions on resize */
+@media (prefers-reduced-motion: no-preference) {
+  .ui-flex {
+    will-change: max-width, gap, padding;
+  }
+}
+
+/* Disable transitions for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ui-flex {
+    transition: none;
+    will-change: auto;
+  }
+}

@@ -50,7 +50,7 @@ You already created `Input` — good!
 * **Switch / Toggle**
 * **Slider**
 * **Range Slider**
-* **FileInput / Upload zone** (optional but very useful)
+* **FileInput / Upload zone**
 
 ### **Form Helpers (still atoms)**
 
@@ -67,8 +67,8 @@ You already created `Input` — good!
 * **IconButton** (or just use `Button size="icon"`)
 * **Badge**
 * **Tag / Pill**
-* **Chip (optional)**
-* **Avatar** (optional at first, but very common)
+* **Chip**
+* **Avatar**
 
 ---
 
@@ -139,58 +139,5 @@ These are UI surfaces you build bigger components on top of.
 
 * Card
 * Divider
-
----
-
-# ⭐ Recommended Build Order (Most Important First)
-
-To keep you productive and not overwhelmed:
-
-### **Phase 1 — Core essentials**
-
-1. **Button** (done)
-2. **Input** (done)
-3. **Text + Heading** (key for all UI)
-4. **Card** (foundation for layout)
-5. **Badge**
-
-### **Phase 2 — Forms**
-
-6. Textarea
-7. Select
-8. Checkbox + Radio
-9. Switch
-10. HelperText / ErrorText
-
-### **Phase 3 — Feedback + Surfaces**
-
-11. Spinner (extract from Button)
-12. AlertBase
-13. Skeleton
-
-### **Phase 4 — Fancy/general atoms**
-
-14. Avatar
-15. Chip/Tag
-16. ProgressBar
-17. Divider
-
----
-
-# 👍 What Should We Build Next?
-
-You have 3 strong choices:
-
-### **Option A → Typography atoms (Text + Heading)**
-
-These are used EVERYWHERE and help you build real pages for NuGraphix.
-
-### **Option B → Card atom**
-
-Lets you start forming real sections with structure and spacing.
-
-### **Option C → Textarea**
-
-If you want to continue the form set.
 
 ---

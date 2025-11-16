@@ -1,7 +1,6 @@
 import * as React from "react";
 import { cn } from "../../utils/cn";
-import { Flex } from "../../atoms/layout";
-import { Link } from "../../atoms/link";
+import { Flex, Link } from "../../atoms";
 
 export interface BreadcrumbItem {
   /** Item label */

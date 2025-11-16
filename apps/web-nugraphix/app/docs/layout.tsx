@@ -84,7 +84,7 @@ export default function DocsLayout({
           <DocsSidebar sections={sidebarSections} />
 
           {/* Content */}
-          <main className="flex-1 max-w-4xl">
+          <main className="flex-1 min-w-0">
             {children}
           </main>
         </Flex>

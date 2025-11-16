@@ -1,10 +1,17 @@
 import * as React from "react";
 import { cn } from "../../utils/cn";
-import { Container, Flex, Stack } from "../../atoms/layout";
-import { Link } from "../../atoms/link";
-import { Button } from "../../atoms/button";
-import { Menu, MenuContent, MenuItem, MenuSeparator } from "../../atoms/menu";
-import { Avatar } from "../../atoms/avatar";
+import { 
+    Container, 
+    Flex, 
+    Stack, 
+    Link, 
+    Button, 
+    Menu, 
+    MenuContent, 
+    MenuItem, 
+    MenuSeparator, 
+    Avatar 
+} from "../../atoms";
 
 export type NavigationVariant = "default" | "transparent" | "sticky" | "minimal";
 export type NavigationSize = "sm" | "md" | "lg";

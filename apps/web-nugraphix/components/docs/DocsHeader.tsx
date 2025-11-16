@@ -1,7 +1,6 @@
 import * as React from "react";
 import { cn } from "@nugraphix/ui/web/src/utils/cn";
-import { Stack, Flex } from "@nugraphix/ui/web/src/atoms/layout";
-import { Badge } from "@nugraphix/ui/web/src/atoms/badge";
+import { Stack, Flex, Badge } from "@nugraphix/ui";
 
 export interface DocsHeaderProps {
   title: string;

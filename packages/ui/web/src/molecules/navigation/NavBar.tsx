@@ -1,7 +1,6 @@
 import * as React from "react";
 import { cn } from "../../utils/cn";
-import { Container, Flex } from "../../atoms/layout";
-import { Link } from "../../atoms/link";
+import { Container, Flex } from "../../atoms";
 
 export interface NavBarProps extends React.HTMLAttributes<HTMLElement> {
   /** Brand/logo element */

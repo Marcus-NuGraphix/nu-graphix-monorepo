@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@nugraphix/ui/web/src/utils/cn";
-import { Stack, Flex } from "@nugraphix/ui/web/src/atoms/layout";
+import { Stack, Flex } from "@nugraphix/ui";
 
 export interface SidebarSection {
   title: string;
@@ -26,7 +26,17 @@ export function DocsSidebar({ sections, className }: DocsSidebarProps) {
   const pathname = usePathname();
 
   return (
-    <aside className={cn("w-64 sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto", className)}>
+    <aside className={cn(
+      "w-64 sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto",
+      "scrollbar-thin scrollbar-track-(--color-surface-subtle) scrollbar-thumb-(--color-border-subtle) hover:scrollbar-thumb-(--color-border-strong)",
+      "[&::-webkit-scrollbar]:w-2",
+      "[&::-webkit-scrollbar-track]:bg-(--color-surface-subtle)",
+      "[&::-webkit-scrollbar-track]:rounded-full",
+      "[&::-webkit-scrollbar-thumb]:bg-(--color-border-subtle)",
+      "[&::-webkit-scrollbar-thumb]:rounded-full",
+      "[&::-webkit-scrollbar-thumb]:hover:bg-(--color-border-strong)",
+      className
+    )}>
       <nav>
         <Stack gap={6}>
           {sections.map((section, idx) => (

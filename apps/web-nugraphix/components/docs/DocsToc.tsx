@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { cn } from "@nugraphix/ui/web/src/utils/cn";
-import { Stack } from "@nugraphix/ui/web/src/atoms/layout";
+import { Stack } from "@nugraphix/ui";
 
 export interface TocItem {
   id: string;
@@ -39,7 +39,16 @@ export function DocsToc({ items, className }: DocsTocProps) {
   }, [items]);
 
   return (
-    <aside className={cn("w-56 sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto", className)}>
+    <aside className={cn(
+      "w-56 sticky top-20 h-[calc(100vh-5rem)] overflow-y-auto",
+      "[&::-webkit-scrollbar]:w-2",
+      "[&::-webkit-scrollbar-track]:bg-(--color-surface-subtle)",
+      "[&::-webkit-scrollbar-track]:rounded-full",
+      "[&::-webkit-scrollbar-thumb]:bg-(--color-border-subtle)",
+      "[&::-webkit-scrollbar-thumb]:rounded-full",
+      "[&::-webkit-scrollbar-thumb]:hover:bg-(--color-border-strong)",
+      className
+    )}>
       <div className="border-l border-(--color-border-subtle) pl-4">
         <h4 className="text-sm font-semibold text-foreground mb-3">On this page</h4>
         <Stack gap={2}>

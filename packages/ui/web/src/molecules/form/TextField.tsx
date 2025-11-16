@@ -1,7 +1,6 @@
 import * as React from "react";
-import { cn } from "../../utils/cn";
 import { Stack, Flex } from "../../atoms/layout";
-import { Input, type InputProps } from "../../atoms/input";
+import { Input, type InputProps } from "../../atoms/form/input";
 
 export interface TextFieldProps
   extends Omit<InputProps, "id" | "isInvalid"> {

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { cn } from "@nugraphix/ui/web/src/utils/cn";
-import { Stack } from "@nugraphix/ui/web/src/atoms/layout";
+import { Stack } from "@nugraphix/ui";
 
 export interface DocsSectionProps {
   id?: string;

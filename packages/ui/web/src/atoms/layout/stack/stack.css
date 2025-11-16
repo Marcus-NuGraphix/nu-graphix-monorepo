@@ -1,0 +1,61 @@
+/* =========================================
+   STACK LAYOUT
+   ========================================= */
+
+.ui-stack {
+  display: flex;
+  flex-direction: column;
+  transition: gap var(--transition-fast) var(--easing-standard);
+}
+
+/* Divider variant for stack items */
+.ui-stack--divided > * + * {
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: inherit;
+}
+
+/* Card stack - adds spacing and backgrounds */
+.ui-stack--cards > * {
+  background: var(--color-surface);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+  transition: 
+    transform var(--transition-fast) var(--easing-standard),
+    box-shadow var(--transition-fast) var(--easing-standard);
+}
+
+.ui-stack--cards > *:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================================
+   RESPONSIVE UTILITIES
+   ========================================= */
+
+/* Smooth container transitions on resize */
+@media (prefers-reduced-motion: no-preference) {
+  .ui-stack {
+    will-change: max-width, gap, padding;
+  }
+}
+
+/* Disable transitions for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ui-stack {
+    transition: none;
+    will-change: auto;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .ui-stack--divided > * + * {
+    border-top-width: 2px;
+  }
+}

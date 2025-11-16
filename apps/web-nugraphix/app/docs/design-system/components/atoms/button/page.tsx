@@ -1,8 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Button } from "@nugraphix/ui/web/src/atoms/button";
-import { Stack, Flex } from "@nugraphix/ui/web/src/atoms/layout";
+import { Button, Stack, Flex } from "@nugraphix/ui";
 import {
   DocsHeader,
   DocsSection,
